@@ -1,0 +1,48 @@
+{
+  "oauth": {
+    "operations": [
+      {
+        "name": "token",
+        "method": "POST",
+        "uri": "{{config.endpoint}}/oauth2/token",
+        "options": {
+          "timeout": "{{config.request.timeout}}",
+          "headers": {
+            "Accept-Language": "en-US",
+            "AXA-Application-Key": "myaxa_base",
+            "Accept": "application/json",
+            "Content-Type": "application/x-www-form-urlencoded"
+          },
+          "json": true,
+          "form": {
+            "username": "{{req.body.username}}",
+            "password": "{{req.body.password}}",
+            "refresh_token": "{{req.body.refresh_token}}",
+            "grant_type": "{{req.body.grant_type}}"
+          },
+          "strictSSL": false
+        }
+      },
+      {
+        "name": "revoke",
+        "method": "POST",
+        "uri": "{{config.endpoint}}/oauth2/revoke",
+        "options": {
+          "timeout": "{{config.request.timeout}}",
+          "headers": {
+            "Accept-Language": "en-US",
+            "AXA-Application-Key": "myaxa_base",
+            "Accept": "application/json",
+            "Content-Type": "application/json",
+            "authorization": "{{req.headers.authorization}}"
+          },
+          "json": {
+            "token": "{{req.body.token}}",
+            "token_type_hint": "{{req.body.token_type_hint}}"
+          },
+          "strictSSL": false
+        }
+      }
+    ]
+  }
+}

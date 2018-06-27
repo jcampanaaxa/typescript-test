@@ -1,0 +1,24 @@
+{
+  "links": [
+    {
+      "rel": "CustomerAccounts",
+      "uri": "/customer-accounts",
+      "method": "GET"
+    },
+    {
+      "rel": "Policies",
+      "uri": "/policies",
+      "method": "GET"
+    },
+    {
+      "rel": "Claims",
+      "uri": "/claims",
+      "method": "GET"
+    },
+    {
+      "rel": "CustomerAdvisors",
+      "uri": "/customer-advisors",
+      "method": "GET"
+    }
+  ]
+}

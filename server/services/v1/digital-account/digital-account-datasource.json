@@ -1,0 +1,65 @@
+{
+  "digitalAccount": {
+    "operations": [
+      {
+        "name": "digitalServices",
+        "method": "GET",
+        "uri": "{{config.endpoint}}/digital-services",
+        "options": {
+          "timeout": "{{config.request.timeout}}",
+          "headers": {
+            "Accept-Language": "en-US",
+            "AXA-Application-Key": "myaxa_base",
+            "Accept": "application/json",
+            "Content-Type": "application/json",
+            "authorization": "{{req.headers.authorization}}"
+          },
+          "json": true,
+          "strictSSL": false
+        }
+      },
+      {
+        "name": "root"
+      },
+      {
+        "name": "changePassword",
+        "method": "POST",
+        "uri": "{{config.endpoint}}/digital-account/password/change",
+        "options": {
+          "timeout": "{{config.request.timeout}}",
+          "headers": {
+            "Accept-Language": "en-US",
+            "AXA-Application-Key": "myaxa_base",
+            "Accept": "application/json",
+            "Content-Type": "application/json",
+            "authorization": "{{req.headers.authorization}}"
+          },
+          "json": {
+            "oldPassword": "{{req.body.oldPassword}}",
+            "newPassword": "{{req.body.newPassword}}"
+          },
+          "strictSSL": false
+        }
+      },
+      {
+        "name": "setPassword",
+        "method": "POST",
+        "uri": "{{config.endpoint}}/digital-account/password/set",
+        "options": {
+          "timeout": "{{config.request.timeout}}",
+          "headers": {
+            "Accept-Language": "en-US",
+            "AXA-Application-Key": "myaxa_base",
+            "Accept": "application/json",
+            "Content-Type": "application/json",
+            "authorization": "{{req.headers.authorization}}"
+          },
+          "json": {
+            "password": "{{req.body.password}}"
+          },
+          "strictSSL": false
+        }
+      }
+    ]
+  }
+}

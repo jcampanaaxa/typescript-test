@@ -1,0 +1,108 @@
+{
+  "policies": {
+    "operations": [
+      {
+        "name": "find",
+        "method": "GET",
+        "uri": "{{config.endpoint}}/policies",
+        "options": {
+          "timeout": "{{config.request.timeout}}",
+          "headers": {
+            "Accept-Language": "en-US",
+            "AXA-Application-Key": "myaxa_base",
+            "Accept": "application/json",
+            "Content-Type": "application/json",
+            "authorization": "{{req.headers.authorization}}"
+          },
+          "json": true,
+          "strictSSL": false
+        }
+      },
+      {
+        "name": "findById",
+        "method": "GET",
+        "uri": "{{config.endpoint}}/policies/{{req.params.policyId}}",
+        "options": {
+          "timeout": "{{config.request.timeout}}",
+          "headers": {
+            "Accept-Language": "en-US",
+            "AXA-Application-Key": "myaxa_base",
+            "Accept": "application/json",
+            "Content-Type": "application/json",
+            "authorization": "{{req.headers.authorization}}"
+          },
+          "json": true,
+          "strictSSL": false
+        }
+      },
+      {
+        "name": "coverages",
+        "method": "GET",
+        "uri": "{{config.endpoint}}/policies/{{req.params.policyId}}/coverages",
+        "options": {
+          "timeout": "{{config.request.timeout}}",
+          "headers": {
+            "Accept-Language": "en-US",
+            "AXA-Application-Key": "myaxa_base",
+            "Accept": "application/json",
+            "Content-Type": "application/json",
+            "authorization": "{{req.headers.authorization}}"
+          },
+          "json": true,
+          "strictSSL": false
+        }
+      },
+      {
+        "name": "savingsOperations",
+        "method": "GET",
+        "uri": "{{config.endpoint}}/policies/{{req.params.policyId}}/savings-operations",
+        "options": {
+          "timeout": "{{config.request.timeout}}",
+          "headers": {
+            "Accept-Language": "en-US",
+            "AXA-Application-Key": "myaxa_base",
+            "Accept": "application/json",
+            "Content-Type": "application/json",
+            "authorization": "{{req.headers.authorization}}"
+          },
+          "json": true,
+          "strictSSL": false
+        }
+      },
+      {
+        "name": "healthcareReimbursements",
+        "method": "GET",
+        "uri": "{{config.endpoint}}/policies/{{req.params.policyId}}/healthcare-reimbursements",
+        "options": {
+          "timeout": "{{config.request.timeout}}",
+          "headers": {
+            "Accept-Language": "en-US",
+            "AXA-Application-Key": "myaxa_base",
+            "Accept": "application/json",
+            "Content-Type": "application/json",
+            "authorization": "{{req.headers.authorization}}"
+          },
+          "json": true,
+          "strictSSL": false
+        }
+      },
+      {
+        "name": "healthcarePreauthorizations",
+        "method": "GET",
+        "uri": "{{config.endpoint}}/policies/{{req.params.policyId}}/healthcare-preauthorizations",
+        "options": {
+          "timeout": "{{config.request.timeout}}",
+          "headers": {
+            "Accept-Language": "en-US",
+            "AXA-Application-Key": "myaxa_base",
+            "Accept": "application/json",
+            "Content-Type": "application/json",
+            "authorization": "{{req.headers.authorization}}"
+          },
+          "json": true,
+          "strictSSL": false
+        }
+      }
+    ]
+  }
+}

@@ -1,0 +1,18 @@
+### RELEASE GENERATED
+npm-shrinkwrap.json
+### RELEASE GENERATED
+
+node_modules/
+
+dist/
+lib/
+target/
+logs/
+.vscode/
+.sonarlint/
+.history/
+.idea/
+.DS_STORE
+*.iml
+*.log
+.node-version

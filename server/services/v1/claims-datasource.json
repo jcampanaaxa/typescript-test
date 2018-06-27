@@ -1,0 +1,40 @@
+{
+  "claims": {
+    "operations": [
+      {
+        "name": "find",
+        "method": "GET",
+        "uri": "{{config.endpoint}}/claims",
+        "options": {
+          "timeout": "{{config.request.timeout}}",
+          "headers": {
+            "Accept-Language": "en-US",
+            "AXA-Application-Key": "myaxa_base",
+            "Accept": "application/json",
+            "Content-Type": "application/json",
+            "authorization": "{{req.headers.authorization}}"
+          },
+          "json": true,
+          "strictSSL": false
+        }
+      },
+      {
+        "name": "findById",
+        "method": "GET",
+        "uri": "{{config.endpoint}}/claims/{{req.params.claimId}}",
+        "options": {
+          "timeout": "{{config.request.timeout}}",
+          "headers": {
+            "Accept-Language": "en-US",
+            "AXA-Application-Key": "myaxa_base",
+            "Accept": "application/json",
+            "Content-Type": "application/json",
+            "authorization": "{{req.headers.authorization}}"
+          },
+          "json": true,
+          "strictSSL": false
+        }
+      }
+    ]
+  }
+}

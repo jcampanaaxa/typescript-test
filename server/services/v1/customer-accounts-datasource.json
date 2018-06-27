@@ -1,0 +1,61 @@
+{
+  "customerAccounts": {
+    "operations": [
+      {
+        "name": "find",
+        "method": "GET",
+        "uri": "{{config.endpoint}}/customer-accounts",
+        "options": {
+          "timeout": "{{config.request.timeout}}",
+          "headers": {
+            "Accept-Language": "en-US",
+            "AXA-Application-Key": "myaxa_base",
+            "Accept": "application/json",
+            "Content-Type": "application/json",
+            "authorization": "{{req.headers.authorization}}"
+          },
+          "json": true,
+          "strictSSL": false
+        }
+      },
+      {
+        "name": "saveEmail",
+        "method": "POST",
+        "uri": "{{config.endpoint}}/customer-accounts/{{req.params.customerAccountId}}/save-email",
+        "options": {
+          "timeout": "{{config.request.timeout}}",
+          "headers": {
+            "Accept-Language": "en-US",
+            "AXA-Application-Key": "myaxa_base",
+            "Accept": "application/json",
+            "Content-Type": "application/json",
+            "authorization": "{{req.headers.authorization}}"
+          },
+          "json": {
+            "emailContactUrl": "{{req.body.emailContactUrl}}"
+          },
+          "strictSSL": false
+        }
+      },
+      {
+        "name": "savePhones",
+        "method": "POST",
+        "uri": "{{config.endpoint}}/customer-accounts/{{req.params.customerAccountId}}/save-phones",
+        "options": {
+          "timeout": "{{config.request.timeout}}",
+          "headers": {
+            "Accept-Language": "en-US",
+            "AXA-Application-Key": "myaxa_base",
+            "Accept": "application/json",
+            "Content-Type": "application/json",
+            "authorization": "{{req.headers.authorization}}"
+          },
+          "json": {
+            "phoneContacts": "{{req.body.phoneContacts}}"
+          },
+          "strictSSL": false
+        }
+      }
+    ]
+  }
+}

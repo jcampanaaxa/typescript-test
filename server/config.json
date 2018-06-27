@@ -1,0 +1,86 @@
+{
+  "request": {
+    "timeout": 2000,
+    "certificate": {
+      "privateKey": "{{env.MW_PRIVATE_KEY:./uat-certificates/esg-uat.key}}",
+      "certificate": "{{env.MW_CERTIFICATE:./uat-certificates/esg-uat.cer}}"
+    }
+  },
+  "server": {
+    "host": "0.0.0.0",
+    "port": 3000,
+    "useSSL": "{{env.NODE_HTTPS_ENABLED:false}}",
+    "certificate": {
+      "passphrase": "AXAAXA",
+      "privateKey": "{{env.MW_PRIVATE_KEY:./uat-certificates/ssl-uat.key}}",
+      "certificate": "{{env.MW_CERTIFICATE:./uat-certificates/ssl-uat.cer}}"
+    }
+  },
+  "locations": {
+    "default": "uat",
+    "settings": [
+      {
+        "name": "uat",
+        "region": "europe",
+        "endpoint": "https://services.axa.cz/MyAxaTest",
+        "credentials": [
+          {
+            "name": "entity",
+            "clientId": "",
+            "clientSecret": ""
+          },
+          {
+            "name": "device_ios",
+            "clientId": "",
+            "clientSecret": ""
+          },
+          {
+            "name": "device_android",
+            "clientId": "",
+            "clientSecret": ""
+          },
+          {
+            "name": "ekomi",
+            "shopId": "",
+            "username": "",
+            "password": ""
+          }
+        ],
+        "features": [
+          {
+            "name": "ekomi",
+            "enabled": false,
+            "settings": {
+              "host": "",
+              "port": "",
+              "useSSL": false
+            }
+          },
+          {
+            "name": "push_notifications",
+            "enabled": false
+          },
+          {
+            "name": "version_validate",
+            "enabled": false
+          },
+          {
+            "name": "maintenance_mode",
+            "enabled": false,
+            "settings": {
+              "updateInterval": 5,
+              "error": {
+                "statusCode": 503,
+                "code": "T503",
+                "developerMessage":
+                  "MyAXA is currently unavailable as we are performing essential system maintenance. Please try again later.",
+                "userMessage":
+                  "MyAXA is currently unavailable as we are performing essential system maintenance. Please try again later."
+              }
+            }
+          }
+        ]
+      }
+    ]
+  }
+}

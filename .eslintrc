@@ -1,0 +1,15 @@
+{
+  "extends": ["airbnb-base", "prettier"],
+  "plugins": ["prettier"],
+  "rules": {
+    "prefer-spread": 0,
+    "comma-dangle": ["error", "never"],
+    "prettier/prettier": [
+      "error",
+      {
+        "printWidth": 100,
+        "singleQuote": true
+      }
+    ]
+  }
+}

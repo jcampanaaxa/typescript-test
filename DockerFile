@@ -1,0 +1,23 @@
+FROM node:8
+
+# Build variables
+ARG NPM_CONFIG_AUTH
+
+# Configure NPM
+RUN echo "_auth=$NPM_CONFIG_AUTH" >> ~/.npmrc
+RUN echo "registry=https://axags.jfrog.io/axags/api/npm/virtual-mobilemiddleware" >> ~/.npmrc
+RUN echo "always-auth=true" >> ~/.npmrc
+
+RUN apt-get update
+
+WORKDIR /opt/app/
+COPY . /opt/app/
+
+RUN npm set propress=false \
+  && npm install \
+  && npm prune \
+  && rm -rf /tmp/npm-*
+
+RUN rm -f ~/.npmrc
+
+CMD npm run start
